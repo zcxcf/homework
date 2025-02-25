@@ -12,7 +12,7 @@ def get_args_parser():
     parser.add_argument('--local_rank', default=-1, type=int)
 
     # Model parameters
-    parser.add_argument('--model', default='test', type=str, metavar='MODEL',
+    parser.add_argument('--model', default='imagenet_15_20_25_30', type=str, metavar='MODEL',
                         help='Name of model to train')
 
     parser.add_argument('--initial_embed_dim', default=768, type=int)
@@ -49,9 +49,9 @@ def get_args_parser():
     parser.add_argument('--weight_decay', type=float, default=0.05,
                         help='weight decay (default: 0.05)')
 
-    parser.add_argument('--lr', type=float, default=1e-4, metavar='LR',
+    parser.add_argument('--lr', type=float, default=5e-5, metavar='LR',
                         help='learning rate (absolute lr)')
-    parser.add_argument('--min_lr', type=float, default=1e-6, metavar='LR',
+    parser.add_argument('--min_lr', type=float, default=5e-7, metavar='LR',
                         help='lower lr bound for cyclic schedulers that hit 0')
 
     parser.add_argument('--layer_decay', type=float, default=0.75,
@@ -92,17 +92,18 @@ def get_args_parser():
     parser.add_argument('--mixup_mode', type=str, default='batch',
                         help='How to apply mixup/cutmix params. Per "batch", "pair", or "elem"')
 
-
     # Dataset parameters
 
     # parser.add_argument('--data_path', default=r'E:\imagenet100', type=str,
     #                     help='dataset path')
     # parser.add_argument('--data_path', default=r'/home/ssd7T/zc_reuse/imagenet100tiny', type=str,
     #                     help='dataset path')
-    # parser.add_argument('--data_path', default=r'/home/wangkai/big_space/datasets/imagenet', type=str,
-    #                     help='dataset path')
-    parser.add_argument('--data_path', default=r'/data/common/ImageNet', type=str,
+
+    parser.add_argument('--data_path', default=r'/home/wangkai/big_space/datasets/imagenet', type=str,
                         help='dataset path')
+
+    # parser.add_argument('--data_path', default=r'/data/common/ImageNet', type=str,
+    #                     help='dataset path')
 
     parser.add_argument('--dataset', default='_imagenet', type=str,
                         help='dataset name')

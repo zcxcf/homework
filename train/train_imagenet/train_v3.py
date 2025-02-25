@@ -53,7 +53,8 @@ def train(args):
     model.to(device)
 
     if args.pretrained:
-        check_point_path = '/home-new/nus-zwb/reuse/code/pretrained_para/vit_base.pth'
+        # check_point_path = '/home-new/nus-zwb/reuse/code/pretrained_para/vit_base.pth'
+        check_point_path = '/home/ssd7T/zc_reuse/iccv/pretrained_para/vit_base.pth'
         checkpoint = torch.load(check_point_path, map_location=device)
         init_v2(model, checkpoint, init_width=768, depth=12, width=768)
 
